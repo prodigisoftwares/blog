@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load markdown_filters %}
 
 {% block title %}
   Blog Posts
@@ -29,11 +30,11 @@
 
               {% if post.excerpt %}
                 <p class="text-gray-600 mb-4 line-clamp-3">
-                  {{ post.excerpt }}
+                  {{ post.excerpt|markdownx }}
                 </p>
               {% else %}
                 <p class="text-gray-600 mb-4 line-clamp-3">
-                  {{ post.content|truncatewords:30 }}
+                  {{ post.content|truncatewords:30|markdownx }}
                 </p>
               {% endif %}
 

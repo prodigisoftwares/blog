@@ -5,4 +5,5 @@ module.exports = {
     "../blog/static/**/*.js",
   ],
   media: false,
+  plugins: [require("@tailwindcss/typography")],
 };

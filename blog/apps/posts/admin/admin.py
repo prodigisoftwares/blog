@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.db import models
+from markdownx.widgets import MarkdownxWidget
 
 from ..models import Category, Post
 
@@ -18,6 +20,10 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
     date_hierarchy = "published_at"
     ordering = ["-created_at"]
+
+    formfield_overrides = {
+        models.TextField: {"widget": MarkdownxWidget},
+    }
 
     fieldsets = (
         (None, {"fields": ("title", "slug", "content", "excerpt")}),
