@@ -6,7 +6,7 @@ register = template.Library()
 
 
 @register.filter
-def markdownx(content):
+def markdownx(content):  # pragma: no cover
     """
     Convert Markdown content to HTML using MarkdownX's markdownify function.
     """
