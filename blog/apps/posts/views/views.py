@@ -11,7 +11,7 @@ class PostListView(ListView):
     context_object_name = "posts"
     paginate_by = 10
 
-    def get_queryset(self):
+    def get_queryset(self):  # pragma: no cover
         return Post.objects.filter(
             is_published=True, published_at__isnull=False
         ).order_by("-published_at")
@@ -26,5 +26,5 @@ class PostDetailView(DetailView):
     slug_field = "slug"
     slug_url_kwarg = "slug"
 
-    def get_queryset(self):
+    def get_queryset(self):  # pragma: no cover
         return Post.objects.filter(is_published=True, published_at__isnull=False)

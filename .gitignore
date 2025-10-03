@@ -8,3 +8,6 @@ __pycache__/
 staticfiles/
 mediafiles/
 fixtures/
+requirements.txt
+db.sqlite3
+.DS_Store
